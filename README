@@ -1,0 +1,32 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2342
+
+Print the contents of a variable (or any expression), useful for lists and dictionaries.
+
+Adds the command
+    :DictView {expr}
+
+Examples:
+:let mylist = ["foo","bar"]
+:DictView mylist
+* [
+    'foo'
+    'bar'
+* ]
+:DictView {1: mylist}
+* {
+*   1:
+    [
+      'foo'
+      'bar'
+    ]
+* }
+
+Custom variables:
+g:dictview_shiftwidth (default 2)
+g:dictview_maxlevel (default 10)
+
+Global functions:
+func! DictView_PrintList(value, ...)
+func! DictView_Print(value)
+
+2009 Nov 21 also check out: PrettyPrint  vimscript #2860, it is much better
